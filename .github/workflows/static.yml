@@ -1,43 +1,110 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+body {
+  background: #f4f6fb;
+  color: #333;
+}
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+/* NAVBAR */
+nav {
+  background: #2c3e50;
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+nav h2 {
+  font-size: 22px;
+}
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+nav ul {
+  list-style: none;
+  display: flex;
+}
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: white;
+  color: #007bff;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #eaeaea;
+}
+
+/* CONTENT */
+.content {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  width: 280px;
+  padding: 25px;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin-top: 50px;
+}
